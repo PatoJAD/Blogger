@@ -14,7 +14,7 @@
        <data:blog.pageTitle/>
       <b:else/>
        <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
-        <data:blog.pageName/> | <data:blog.title/> 
+        <data:blog.pageName/> | <data:blog.title/>
        <b:else/>
         ERROR 404 - <data:blog.title/>
        </b:if>
@@ -69,7 +69,7 @@
     <meta content='Facebook App ID here' property='fb:app_id'/>
     <meta content='Facebook Admin ID here' property='fb:admins'/>
     <meta content='@PatoJADOficial' name='twitter:site'/>
-    <meta content='@PatoJADOficial' name='twitter:creator'/> 
+    <meta content='@PatoJADOficial' name='twitter:creator'/>
     <!-- Social Media meta tag need customer customization -->
 
 
@@ -121,17 +121,17 @@
           transition: padding-top .3s,padding-bottom .3s;
           border: none;
         }
-        
+
        .shrink {
           padding-top: 0;
           padding-bottom: 0;
           background: url(https://4.bp.blogspot.com/-wVWDCa1nyG8/Uv-WMcJ7ZuI/AAAAAAAADHo/OEQ2mRMXg6Q/s1600/header-middle-bg.png) repeat-x 0 0 #1C1C1C;
       }
       .banner{
-        background-image:url('http://www.hd-freewallpapers.com/latest-wallpapers/abstract-website-backgrounds.jpg');
+        background-image:url('https://media.giphy.com/media/Q9aBxHn9fTqKs/giphy.gif');
         text-align: center;
           color: #fff;
-         
+
           background-repeat: no-repeat;
           background-attachment: scroll;
           background-position: center center;
@@ -223,6 +223,38 @@
       .lynxfootercolor{
         background: url(https://4.bp.blogspot.com/-wVWDCa1nyG8/Uv-WMcJ7ZuI/AAAAAAAADHo/OEQ2mRMXg6Q/s1600/header-middle-bg.png) repeat-x 0 0 #1C1C1C;
       }
+
+      .body{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background: #ffffff;
+      }
+
+      body{
+        background: #ffffff url(https://2.bp.blogspot.com/-A41EaFabiAw/VBTl3dXKTzI/AAAAAAAAAe4/Ku8cZ33_z3s/s0/bg1.png) repeat fixed top left;
+        font-family: Arimo,"Open sans",Helvetica,Arial,sans-serif;
+        font-size: 13px;
+        color: #000000;
+        line-height: 18.5px;
+      }
+
+      .imgadaptalynx{
+        height: 100%;
+      }
+    </style>
+    <style>
+      <b:if cond='data:blog.url != data:blog.homepageUrl'>
+        #frontpage {
+          display:none;
+          visibility:hidden;
+        }
+      </b:if>
+      <b:if cond='data:blog.url == data:blog.homepageUrl'>
+        #singlepage {
+          display:none;
+          visibility:hidden;
+        }
+      </b:if>
     </style>
     <b:skin>
     </b:skin>
@@ -247,7 +279,7 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
-          </li> 
+          </li>
          <!-- Dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -264,37 +296,51 @@
       </div>
     </nav>
 
-    <div class="banner">
+    <div class="banner" id='frontpage'>
       <div class="container">
-      <div class="banner-text">
-      <div class="banner-heading">
-      Bienvenido al Mundo Linux
+        <div class="banner-text">
+          <div class="banner-heading">
+            Bienvenido al Mundo Linux
+          </div>
+          <div class="banner-sub-heading">
+            Este sitio tiene su propia comunidad en Telegram, no esperes mas para unirte!
+          </div>
+          <button type="button" class="btn btn-primary btn-lg btn-banner">Unete</button>
+        </div>
       </div>
-      <div class="banner-sub-heading">
-      Este sitio tiene su propia comunidad en Telegram, no esperes mas para unirte!
-      </div>
-      <button type="button" class="btn btn-primary btn-lg btn-banner">Unete</button>
-      </div>
+    </div>
+
+    <div class="banner" id='singlepage'>
+      <div class="container">
+        <div class="banner-text">
+          <div class="banner-heading">
+            <b:if cond='data:blog.pageType == &quot;index&quot;'>
+             <data:blog.pageTitle/>
+            <b:else/>
+              <data:blog.pageName/>
+            </b:if>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Top Menu (End) -->
 
-     <div class='clear'/> 
+    <div class='row' id='frontpage'>
+      <div class="col-sm-12">
+        <b:section id='slyder' preferred='yes'>
+        </b:section>
+      </div>
+    </div>
+
+    <div class='clear'/>
 
     <!-- Top Body (Start) -->
     <main class='bd-masthead'>
       <div class='container-fluid'>
-        <div id='frontpage'>
-          <div class='row'>
-            <div class="col-sm-12">
-              <b:section id='slyder' preferred='yes'>
-              </b:section>
-            </div>
-          </div>
-            <div class='clear'/>
+        <div class="container body">
           <div class='row'>
             <div class="col-sm-8">
-              <b:section id='body' preferred='yes'>              
+              <b:section id='body' preferred='yes'>
               </b:section>
             </div>
 
